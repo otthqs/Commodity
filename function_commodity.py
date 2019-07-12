@@ -1,4 +1,7 @@
-# important!!!! estimate for one slideing window parameters
+"""
+Estimate parameters within one slideing window.
+"""
+
 def estimate_for_parameters(Y_100,theta_old,sigma_old):#,theta_init):
 
     def estimate_for_Y( L_tilta, Y_window, L_used_for_Y,delta1):
@@ -149,10 +152,9 @@ def estimate_for_parameters(Y_100,theta_old,sigma_old):#,theta_init):
     return theta_Y, sigma_Y, theta_L, sigma_L, delta1, delta2
 
 
-
-
-
-
+"""
+Based on the estimatin result and the model we built, selecting pairs that trading on each day.
+"""
 def pairs_selection(n_pairs, stocks_pool,start_date):
     data1 = data.copy()
     start_index = data1[data1["date"] == start_date].index[0] # 今天开盘的第一个index
